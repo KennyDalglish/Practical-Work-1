@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include <math.h>
 #include <time.h>
@@ -12,26 +12,26 @@ void Practical::random(int value)
 {
 	srand(static_cast< unsigned int > (time(NULL)));
 	value = rand() % value + 1;
-	cout << "Ðàíäîìíîå ÷èñëî: " << value << endl;
+	cout << "Ð Ð°Ð½Ð´Ð¾Ð¼Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << value << endl;
 }
 void Practical::digital(int value)
 {
-	cout << "Äî: " << value << endl;
+	cout << "Ð”Ð¾: " << value << endl;
 	do
 	{
 		output_digital = (output_digital * 10) + (value % 10);
 		value = value / 10;
 	}
 	while (value > 0);
-	cout << "Ïîñëå: " << output_digital << endl;
+	cout << "ÐŸÐ¾ÑÐ»Ðµ: " << output_digital << endl;
 }
 void Practical::numbersGame()
 {
 	int value = 0;
-	cout << "Ââåäèòå ÷èñëî îò 100 äî 999" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 100 Ð´Ð¾ 999" << endl;
 	while (!(cin >> value) || value < 100 || value > 999)
 	{
-		cout << "Ââåäèòå ÷èñëî îò 100 äî 999" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 100 Ð´Ð¾ 999" << endl;
 
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -40,24 +40,24 @@ void Practical::numbersGame()
 	result_game = value * pow(10, nDigits) + value;
 	result_game = result_game / 13;
 	result_game = result_game / abs(value);
-	cout << "×èñëî = " << result_game << endl;
+	cout << "Ð§Ð¸ÑÐ»Ð¾ = " << result_game << endl;
 }
 void Practical::errorProgrammCode()
 {
 	int
 		value_one = 0,
 		value_two = 0;
-	cout << "Ââåäèòå äâà ÷èñëà: " << endl;
-	cout << "Ââåäèòå ïåðâîå ÷èñëî: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << endl;
 	cin >> value_one;
-	cout << "Ââåäèòå âòîðîå ÷èñëî: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << endl;
 	cin >> value_two;
 	div_result = ldiv(value_one, 100);
 	resultMod = fmod(value_one, 1000 - 1);
 	cout << "Div: " << div_result.quot << " | " << div_result.rem << endl;
 	if (resultMod == 0)
 	{
-		cout << "Îñòàòêà íåò!" << endl;
+		cout << "ÐžÑÑ‚Ð°Ñ‚ÐºÐ° Ð½ÐµÑ‚!" << endl;
 	}
 	else
 	{
@@ -72,7 +72,7 @@ void Practical::doubleFigures()
 	value_one_ = value_one_ / 10;
 	value_two_ = value_two_ % 10;
 	value_one_ = value_one_ + value_two_;
-	cout << "Ñóììà öèôð: " << value_one_ << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ñ†Ð¸Ñ„Ñ€: " << value_one_ << endl;
 }
 void Practical::ClearCin()
 {
@@ -89,12 +89,12 @@ bool IsValidRange(const Range &range) { return range.from < range.to; }
 void Practical::AskUserValueInRange(const Range &range)
 {
 	assert(IsValidRange(range));
-	cout << "Ââåäèòå ÷èñëî îò " << range.from << " äî " << range.to << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ " << range.from << " Ð´Ð¾ " << range.to << endl;
 }
 int Practical::GetIntegerValueInRangeFromUser(const Range &range)
 {
 	int value = range.from;
-	cout << "Ââåäèòå ÷èñëî îò 0 äî 99 " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 0 Ð´Ð¾ 99 " << endl;
 	while (!(cin >> value) || !IsValueInRange(value, range)) 
 	{
 		AskUserValueInRange(range);
